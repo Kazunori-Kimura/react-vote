@@ -117,7 +117,7 @@ const QuestionForm: React.FC = () => {
                     投票期間
                 </label>
                 <input
-                    type="date"
+                    type="datetime-local"
                     className="question-form__limit-text"
                     id="limit"
                     required
