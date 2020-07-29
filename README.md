@@ -47,14 +47,26 @@ https://qiita.com/EndouT6/items/b8df6a127cd6bb335507
         - 残余引数
         - 分割代入
     - TypeScriptの基本
+        - 型の宣言
 2. Reactの基本
     - create-react-app
-    - eslint
-    - prettier
-    - 生成されたファイルの確認
+        - 生成されたファイルの確認
+    - eslint/prettier/editorconfig の導入
+        - eslintとは/eslintを導入するメリット
+        - prettierとは/prettierを導入するメリット
+        - editorconfigとは/editorconfigを導入するメリット
+        - eslint/prettier/editorconfig のインストールと設定
+    - index.tsx の修正
+        - eslintによるエラー検出
+        - prettierによる自動整形
+    - App.tsxの修正
+        - Componentとは
+        - FunctionComponent/ClassComponentについて
+        - App.tsxを推奨される内容に修正する
     - Hello React!
-    - state hook
-    - コンポーネントと props
+        - 新しいコンポーネントを追加する
+        - state hook
+        - コンポーネントと props
 3. アンケート投稿機能の作成
     - 投稿フォーム
     - styled-component の導入
@@ -128,4 +140,4 @@ users
 ### 投稿フォーム
 
 mkdir src/components
-touch src/components/VoteForm.tsx
+touch src/components/QuestionForm.tsx
