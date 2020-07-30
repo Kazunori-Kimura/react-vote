@@ -2,7 +2,7 @@ export interface Question {
     id: number;
     question: string;
     limit: string;
-    createdBy: number;
+    createdBy?: number;
     createdAt?: string;
     updatedAt?: string;
     choices?: Choice[];
@@ -21,7 +21,7 @@ export interface Vote {
     id: number;
     questionId: number;
     choiceId: number;
-    votedBy?: string;
+    votedBy?: number;
     createdAt?: string;
     updatedAt?: string;
 }

@@ -20,6 +20,11 @@ https://styled-components.com/
 
 ---
 
+ニコニコ動画 『スナップショット検索 v2 API』 ガイド
+https://site.nicovideo.jp/search-api-docs/snapshot.html
+
+---
+
 ## Setup eslint & prettier
 
 > npx eslint --init
@@ -39,7 +44,7 @@ https://styled-components.com/
         - API設計
     - Node.jsのインストール (Mac)
     - Node.jsのインストール (Windows)
-    - VSCodeの拡張機能
+    - VSCode拡張機能のインストール
         - eslint
         - prettier
         - editorconfig
@@ -47,10 +52,12 @@ https://styled-components.com/
 1. Reactを始める前に
     - モダンなJavaScriptの機能
         - 変数の宣言 (var, let, const)
+        - import/export
         - アロー関数
         - スプレッド構文
         - 残余引数
         - 分割代入
+    - immutableについて
     - TypeScriptの基本
         - 型の宣言
 2. Reactの基本
@@ -80,23 +87,37 @@ https://styled-components.com/
     - 回答機能の実装
 4. WebAPIの作成
     - WebAPIとは / RESTfulとは
+    - expressとは
     - プロジェクトの作成
+        - express
+        - sequelize
     - APIの実装
-5. 認証機能の実装
+        - モデルの実装
+        - ルーティングの実装
+    - 認証機能の実装
+        - 認証方式の設計
+        - 認証APIの実装
+        - middlewareの実装
+    - 実行、動作確認
+5. ReactとWebAPIを連携させる(1): 認証機能の実装
     - ユーザー登録機能の実装
     - ログイン機能の実装
     - Context Hookの導入
 6. ReactとWebAPIを連携させる(2): アンケート投稿・回答
+    - Effect Hookとは
     - アンケートの投稿
     - 一覧の取得
     - 回答の投票
 7. コメント機能の追加
+    - テーブル設計
     - WebAPI
         - modelの追加
-        - comment api
+        - comment apiの実装
     - FrontEnd
-8. 画面の分割
-    - react-routerの導入
+        - コメントフォームの作成
+        - コメント一覧の表示
+8. 画面の分割: react-routerの導入
+    - react-routerとは
     - 一覧画面
     - 投稿画面
     - 詳細/コメント画面
