@@ -10,7 +10,7 @@ const App: React.FC = () => {
     const [selectedQuestion, setSelectedQuestion] = useState<Question>();
 
     /**
-     * QuestionFormのsubmit
+     * 質問の登録/更新
      */
     const handleSubmit = (question: Question) => {
         const newQuestions = clone(questions);
@@ -38,17 +38,28 @@ const App: React.FC = () => {
         setSelectedQuestion(undefined);
     };
 
+    /**
+     * フォームのキャンセル
+     */
     const handleCancel = () => {
+        // 質問の選択を解除
         setSelectedQuestion(undefined);
     };
 
+    /**
+     * 質問の削除
+     */
     const handleDelete = (questionId: number) => {
+        // eslint-disable-next-line no-alert
         if (window.confirm('このアンケートを削除しても良いですか？')) {
             const newQuestions = questions.filter((q) => q.id !== questionId);
             setQuestions(clone(newQuestions));
         }
     };
 
+    /**
+     * 質問の編集
+     */
     const handleEdit = (questionId: number) => {
         const question = questions.find((q) => q.id === questionId);
         if (question) {
@@ -56,6 +67,9 @@ const App: React.FC = () => {
         }
     };
 
+    /**
+     * 投票
+     */
     const handleVote = (question: Question) => {
         const newQuestions = clone(questions);
         const index = newQuestions.findIndex((q) => q.id === question.id);
