@@ -32,7 +32,7 @@ const App: React.FC = () => {
             <Header user={user} onSignIn={onSignIn} onSignOut={onSignOut} />
             <div className="App__contents">
                 <div className="App__content-item">
-                    {user ? <QuestionEntry question={questionEntry} /> : <SignUp user={user} />}
+                    {user ? <QuestionEntry question={questionEntry} /> : <SignUp />}
                 </div>
                 <div className="App__content-item">
                     <QuestionList questions={questions} user={user} />
