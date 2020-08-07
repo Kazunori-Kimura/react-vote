@@ -1,6 +1,8 @@
 import React from 'react';
 import { IUser } from '../models';
 
+import './SignIn.css';
+
 interface SignInProps {
     user?: IUser;
 }
@@ -23,7 +25,7 @@ const SignIn: React.FC<SignInProps> = ({ user }) => {
                 defaultValue={user?.password}
             />
             <button type="submit" className="sign-in__button">
-                Sign In
+                ログイン
             </button>
         </form>
     );

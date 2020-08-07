@@ -1,6 +1,8 @@
 import React from 'react';
 import { IUser } from '../models';
 
+import './SignUp.css';
+
 interface SignUpProps {
     user?: IUser;
 }
