@@ -1,0 +1,44 @@
+.vote-result {
+    position: relative;
+    height: 2rem;
+}
+
+.vote-result__rate-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.4rem;
+    background-color: #c9f1fd;
+    border-radius: 3px;
+    min-width: 0.5rem;
+}
+.vote-result__rate-bar--voted {
+    background-color: #cbe8ba;
+}
+
+.vote-result__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    height: 1.4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.vote-result__content {
+    padding-left: 0.5rem;
+}
+
+.vote-result__voted {
+    color: #72bb53;
+    margin-left: 1rem;
+}
+
+.vote-result__rate {
+    flex: 1;
+    margin-left: 1rem;
+    text-align-last: right;
+}
