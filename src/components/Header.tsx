@@ -7,10 +7,16 @@ import './Header.css';
 
 interface HeaderProps {
     user?: IUser;
+    onSignIn: (user: IUser) => void;
+    onSignOut: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ user }) => {
-    return <div className="header">{user ? <SignOut user={user} /> : <SignIn />}</div>;
+const Header: React.FC<HeaderProps> = ({ user, onSignIn, onSignOut }) => {
+    return (
+        <div className="header">
+            {user ? <SignOut user={user} onSignOut={onSignOut} /> : <SignIn onSignIn={onSignIn} />}
+        </div>
+    );
 };
 
 export default Header;
