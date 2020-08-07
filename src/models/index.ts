@@ -1,35 +1,29 @@
-export interface Question {
+export interface IQuestion {
     id: number;
     question: string;
     limit: string;
     createdBy?: number;
-    createdAt?: string;
-    updatedAt?: string;
-    choices?: Choice[];
-    votes?: Vote[];
+    choices?: IChoice[];
+    votes?: IVote[];
 }
 
-export interface Choice {
+export interface IChoice {
     id: number;
     questionId?: number;
     content: string;
-    createdAt?: string;
-    updatedAt?: string;
 }
 
-export interface Vote {
+export interface IVote {
     id: number;
     questionId: number;
     choiceId: number;
     votedBy?: number;
-    createdAt?: string;
-    updatedAt?: string;
 }
 
-export interface User {
+export interface IUser {
     id: number;
+    email: string;
     name: string;
     password: string;
-    createdAt?: string;
-    updatedAt?: string;
+    token?: string;
 }

@@ -1,0 +1,24 @@
+.question-item-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.question-item-footer__limit {
+    flex: 1;
+}
+
+.question-item-footer__vote-count {
+    margin-left: 1rem;
+}
+
+.question-item-footer__delete-button {
+    width: 3rem;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    border: none;
+    background-color: #ff8a84;
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
