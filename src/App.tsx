@@ -42,7 +42,7 @@ const App: React.FC = () => {
                     {user ? <QuestionEntry onReflesh={onRefresh} /> : <SignUp />}
                 </div>
                 <div className="App__content-item">
-                    <QuestionList questions={questions} user={user} />
+                    <QuestionList questions={questions} user={user} onRefresh={onRefresh} />
                 </div>
             </div>
         </div>

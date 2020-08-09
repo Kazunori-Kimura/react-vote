@@ -7,9 +7,10 @@ import './QuestionList.css';
 interface QuestionListProps {
     questions: IQuestion[];
     user?: IUser;
+    onRefresh: () => void;
 }
 
-const QuestionList: React.FC<QuestionListProps> = ({ questions, user }) => {
+const QuestionList: React.FC<QuestionListProps> = ({ questions, user, onRefresh }) => {
     return (
         <div className="question-list">
             {questions.map((question) => (
@@ -17,6 +18,7 @@ const QuestionList: React.FC<QuestionListProps> = ({ questions, user }) => {
                     key={`question-item-${question.id}`}
                     question={question}
                     user={user}
+                    onRefresh={onRefresh}
                 />
             ))}
         </div>

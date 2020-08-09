@@ -10,9 +10,10 @@ interface VoteListProps {
     choices: IChoice[];
     votes: IVote[];
     user?: IUser;
+    onRefresh: () => void;
 }
 
-const VoteList: React.FC<VoteListProps> = ({ limit, choices, votes, user }) => {
+const VoteList: React.FC<VoteListProps> = ({ limit, choices, votes, user, onRefresh }) => {
     // 期限切れかどうか
     const expired = limit < new Date().toJSON();
     // 投票済みかどうか
@@ -25,7 +26,14 @@ const VoteList: React.FC<VoteListProps> = ({ limit, choices, votes, user }) => {
                 if (expired || voted) {
                     return <VoteResult key={key} choice={choice} votes={votes} user={user} />;
                 }
-                return <VoteButton key={key} choice={choice} disabled={Number.isNaN(user?.id)} />;
+                return (
+                    <VoteButton
+                        key={key}
+                        choice={choice}
+                        disabled={Number.isNaN(user?.id)}
+                        onRefresh={onRefresh}
+                    />
+                );
             })}
         </div>
     );
