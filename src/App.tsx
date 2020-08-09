@@ -7,7 +7,7 @@ import QuestionList from './components/QuestionList';
 import { IUser } from './models';
 
 // 仮に静的なデータを使用する
-import { questionEntry, questions } from './models/data';
+import { questions } from './models/data';
 
 const App: React.FC = () => {
     // ログインユーザー情報
@@ -27,12 +27,19 @@ const App: React.FC = () => {
         setUser(undefined);
     };
 
+    /**
+     * リスト更新
+     */
+    const onRefresh = () => {
+        // TODO リスト更新する
+    };
+
     return (
         <div className="App">
             <Header user={user} onSignIn={onSignIn} onSignOut={onSignOut} />
             <div className="App__contents">
                 <div className="App__content-item">
-                    {user ? <QuestionEntry question={questionEntry} /> : <SignUp />}
+                    {user ? <QuestionEntry onReflesh={onRefresh} /> : <SignUp />}
                 </div>
                 <div className="App__content-item">
                     <QuestionList questions={questions} user={user} />
