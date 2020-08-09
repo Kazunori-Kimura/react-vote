@@ -31,6 +31,12 @@ https://win.just4fun.biz/?PowerShell/touch%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E
 
 ---
 
+## create-react-app
+
+```
+> npx create-react-app my-app --template typescript
+```
+
 ## Setup eslint & prettier
 
 > npx eslint --init

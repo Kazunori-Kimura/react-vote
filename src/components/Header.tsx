@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUser } from '../models';
+import { IUser, IAuthenticateParams } from '../models';
 import SignOut from './SignOut';
 import SignIn from './SignIn';
 
@@ -7,7 +7,7 @@ import './Header.css';
 
 interface HeaderProps {
     user?: IUser;
-    onSignIn: (user: IUser) => void;
+    onSignIn: (user: IAuthenticateParams) => void;
     onSignOut: () => void;
 }
 
