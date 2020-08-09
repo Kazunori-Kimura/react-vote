@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatLocalDatetime } from '../utils/date';
+import { formatLocalDatetime } from '../utils';
 
 import './QuestionItemFooter.css';
 

@@ -8,9 +8,10 @@ import './QuestionItem.css';
 interface QuestionItemProps {
     question: IQuestion;
     user?: IUser;
+    onRefresh: () => void;
 }
 
-const QuestionItem: React.FC<QuestionItemProps> = ({ question, user }) => {
+const QuestionItem: React.FC<QuestionItemProps> = ({ question, user, onRefresh }) => {
     return (
         <div className="question-item">
             <div className="question-item__question">{question.question}</div>
@@ -19,6 +20,7 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ question, user }) => {
                 choices={question.choices ?? []}
                 votes={question.votes ?? []}
                 user={user}
+                onRefresh={onRefresh}
             />
             <QuestionItemFooter
                 limit={question.limit}
