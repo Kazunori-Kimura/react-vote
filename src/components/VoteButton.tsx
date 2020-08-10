@@ -21,7 +21,13 @@ const VoteButton: React.FC<VoteButtonProps> = ({ choice, disabled = false, onRef
     };
 
     return (
-        <button type="button" className="vote-button" disabled={disabled} onClick={handleVote}>
+        <button
+            type="button"
+            data-testid="vote-button"
+            className="vote-button"
+            disabled={disabled}
+            onClick={handleVote}
+        >
             {choice.content}
         </button>
     );

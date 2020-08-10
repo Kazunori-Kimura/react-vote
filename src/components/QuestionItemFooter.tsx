@@ -15,7 +15,7 @@ const QuestionItemFooter: React.FC<QuestionItemFooterProps> = ({
     isOwner = false,
 }) => {
     return (
-        <div className="question-item-footer">
+        <div className="question-item-footer" data-testid="question-item-footer">
             <div className="question-item-footer__limit">
                 {`${formatLocalDatetime(new Date(limit))} まで`}
             </div>

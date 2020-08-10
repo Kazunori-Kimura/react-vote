@@ -20,7 +20,7 @@ const VoteList: React.FC<VoteListProps> = ({ limit, choices, votes, user, onRefr
     const voted = votes.some((vote) => vote.votedBy === user?.id);
 
     return (
-        <div className="vote-list">
+        <div className="vote-list" data-testid="vote-list">
             {choices.map((choice) => {
                 const key = `vote-item-${choice.questionId}-${choice.id}`;
                 if (expired || voted) {

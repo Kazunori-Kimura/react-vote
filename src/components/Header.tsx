@@ -13,7 +13,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ user, onSignIn, onSignOut }) => {
     return (
-        <div className="header">
+        <div className="header" data-testid="header">
             {user ? <SignOut user={user} onSignOut={onSignOut} /> : <SignIn onSignIn={onSignIn} />}
         </div>
     );

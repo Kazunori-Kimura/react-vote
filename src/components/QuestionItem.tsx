@@ -13,7 +13,7 @@ interface QuestionItemProps {
 
 const QuestionItem: React.FC<QuestionItemProps> = ({ question, user, onRefresh }) => {
     return (
-        <div className="question-item">
+        <div className="question-item" data-testid="question-item">
             <div className="question-item__question">{question.question}</div>
             <VoteList
                 limit={question.limit}

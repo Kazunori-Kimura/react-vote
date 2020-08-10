@@ -102,7 +102,12 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
     };
 
     return (
-        <form id="question-entry" className="question-entry" onSubmit={handleSubmit}>
+        <form
+            id="question-entry"
+            data-testid="question-entry"
+            className="question-entry"
+            onSubmit={handleSubmit}
+        >
             <h2 className="question-entry__title">質問を投稿する</h2>
             <textarea
                 className="question-entry__question"

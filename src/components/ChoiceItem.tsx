@@ -15,6 +15,7 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ choice, index, onChange, onDele
         <div className="choice-item">
             <input
                 type="text"
+                data-testid="choice-item-input"
                 name={`${choice.id}-content`}
                 className="choice-item__content"
                 placeholder={`選択肢 ${index}`}
@@ -26,6 +27,7 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ choice, index, onChange, onDele
             {index >= 2 && (
                 <button
                     type="button"
+                    data-testid="choice-item-delete-button"
                     className="choice-item__delete-button"
                     onClick={() => onDelete(choice.id)}
                 >

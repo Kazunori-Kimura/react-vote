@@ -37,7 +37,7 @@ const SignUp: React.FC<SignUpProps> = ({ onEntry }) => {
     };
 
     return (
-        <form id="sign-up" className="sign-up" onSubmit={handleSubmit}>
+        <form id="sign-up" data-testid="sign-up" className="sign-up" onSubmit={handleSubmit}>
             <h2 className="sign-up__title">ユーザー登録</h2>
             <input
                 type="email"

@@ -45,7 +45,13 @@ const SignIn: React.FC<SignInProps> = ({ onSignIn }) => {
     };
 
     return (
-        <form id="sign-in" className="sign-in" onSubmit={handleSubmit} autoComplete="off">
+        <form
+            id="sign-in"
+            data-testid="sign-in"
+            className="sign-in"
+            onSubmit={handleSubmit}
+            autoComplete="off"
+        >
             <input
                 type="email"
                 name="email"

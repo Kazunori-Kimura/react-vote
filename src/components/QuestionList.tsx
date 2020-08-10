@@ -12,7 +12,7 @@ interface QuestionListProps {
 
 const QuestionList: React.FC<QuestionListProps> = ({ questions, user, onRefresh }) => {
     return (
-        <div className="question-list">
+        <div className="question-list" data-testid="question-list">
             {questions.map((question) => (
                 <QuestionItem
                     key={`question-item-${question.id}`}
