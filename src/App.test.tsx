@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 import { IUser } from './models';
 
+// 認証情報
 const user: IUser = {
     id: 1,
     email: 'kimura-kazunori@example.com',

@@ -8,10 +8,11 @@ import './QuestionItem.css';
 interface QuestionItemProps {
     question: IQuestion;
     user?: IUser;
-    onRefresh: () => void;
+    onDelete: (questionId: number) => void;
+    onVote: (vote: { questionId: number; choiceId: number }) => void;
 }
 
-const QuestionItem: React.FC<QuestionItemProps> = ({ question, user, onRefresh }) => {
+const QuestionItem: React.FC<QuestionItemProps> = ({ question, user, onVote, onDelete }) => {
     return (
         <div className="question-item" data-testid="question-item">
             <div className="question-item__question">{question.question}</div>
@@ -20,12 +21,13 @@ const QuestionItem: React.FC<QuestionItemProps> = ({ question, user, onRefresh }
                 choices={question.choices ?? []}
                 votes={question.votes ?? []}
                 user={user}
-                onRefresh={onRefresh}
+                onVote={onVote}
             />
             <QuestionItemFooter
-                limit={question.limit}
+                question={question}
                 voteCount={question.votes?.length ?? 0}
                 isOwner={question.createdBy === user?.id}
+                onDelete={onDelete}
             />
         </div>
     );

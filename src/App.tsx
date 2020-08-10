@@ -54,6 +54,15 @@ const App: React.FC = () => {
     };
 
     /**
+     * 質問の削除
+     */
+    const onDelete = (questionId: number) => {
+        // TODO: DELETE: /question/:id
+        // eslint-disable-next-line no-console
+        console.log(questionId);
+    };
+
+    /**
      * ユーザーの登録
      */
     const onEntryUser = (entryUser: IUserCreateParams) => {
@@ -76,7 +85,12 @@ const App: React.FC = () => {
                     )}
                 </div>
                 <div className="App__content-item">
-                    <QuestionList questions={questions} user={user} onRefresh={onRefresh} />
+                    <QuestionList
+                        questions={questions}
+                        user={user}
+                        onRefresh={onRefresh}
+                        onDelete={onDelete}
+                    />
                 </div>
             </div>
         </div>

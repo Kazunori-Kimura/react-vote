@@ -92,10 +92,11 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
         if (event.currentTarget.checkValidity()) {
             // questionの登録処理
-            onEntry(clone(question));
+            const payload = clone(question);
+            payload.limit = new Date(payload.limit).toJSON();
+            onEntry(payload);
             // stateを初期化
             setQuestion(initialState);
         }
@@ -111,6 +112,8 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
             <h2 className="question-entry__title">質問を投稿する</h2>
             <textarea
                 className="question-entry__question"
+                data-testid="question-entry-question"
+                name="question"
                 placeholder="質問"
                 required
                 maxLength={255}
@@ -127,7 +130,9 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
                 <span className="question-entry__limit-label">期限</span>
                 <input
                     className="question-entry__limit-input"
+                    data-testid="question-entry-limit"
                     type="datetime-local"
+                    name="limit"
                     required
                     min={formatLocalDatetime(new Date())}
                     value={question.limit}
