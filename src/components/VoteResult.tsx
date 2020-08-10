@@ -20,6 +20,7 @@ const VoteResult: React.FC<VoteResultProps> = ({ choice, votes, user }) => {
 
     return (
         <div
+            data-testid="vote-result"
             className={classnames('vote-result', {
                 'vote-result--voted': voted,
             })}

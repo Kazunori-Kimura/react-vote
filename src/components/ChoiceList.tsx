@@ -13,7 +13,7 @@ interface ChoiceListProps {
 
 const ChoiceList: React.FC<ChoiceListProps> = ({ choices, onChange, onDelete, onAdd }) => {
     return (
-        <div className="choice-list">
+        <div className="choice-list" data-testid="choice-list">
             {choices.map((choice, index) => (
                 <ChoiceItem
                     key={`choice-item-${choice.id}`}
@@ -23,7 +23,12 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ choices, onChange, onDelete, on
                     onDelete={onDelete}
                 />
             ))}
-            <button type="button" className="choice-list__add-button" onClick={onAdd}>
+            <button
+                type="button"
+                data-testid="choice-item-add-button"
+                className="choice-list__add-button"
+                onClick={onAdd}
+            >
                 追加
             </button>
         </div>

@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
-import { IUser } from '../models';
+import { IAuthenticateParams } from '../models';
 
 import './SignIn.css';
 
-import { user } from '../models/data';
-
 interface SignInProps {
-    onSignIn: (user: IUser) => void;
+    onSignIn: (params: IAuthenticateParams) => void;
 }
 
-// stateの型定義
-interface ISignInState {
-    email: string;
-    password: string;
-}
 // stateの初期値
-const initialState: ISignInState = {
+const initialState: IAuthenticateParams = {
     email: '',
     password: '',
 };
@@ -30,7 +23,7 @@ const SignIn: React.FC<SignInProps> = ({ onSignIn }) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.currentTarget;
         // 入力値を元に state を再作成
-        const state: ISignInState = {
+        const state: IAuthenticateParams = {
             ...signInState,
             [name]: value,
         };
@@ -47,21 +40,18 @@ const SignIn: React.FC<SignInProps> = ({ onSignIn }) => {
         // フォームに入力エラーが無い場合
         if (event.currentTarget.checkValidity()) {
             // 認証処理を実行する
-            // 仮実装で data.ts のユーザー情報と一致するかどうか確認します
-            const { email, password } = signInState;
-            if (email === user.email && password === user.password) {
-                // ログインユーザー情報を親コンポーネントに渡す
-                onSignIn(user);
-            } else {
-                // 認証失敗時、alertを表示します
-                // eslint-disable-next-line no-alert
-                alert('メールアドレスかパスワードが正しくありません');
-            }
+            onSignIn({ ...signInState });
         }
     };
 
     return (
-        <form className="sign-in" onSubmit={handleSubmit} autoComplete="off">
+        <form
+            id="sign-in"
+            data-testid="sign-in"
+            className="sign-in"
+            onSubmit={handleSubmit}
+            autoComplete="off"
+        >
             <input
                 type="email"
                 name="email"

@@ -10,8 +10,10 @@ interface SignOutProps {
 
 const SignOut: React.FC<SignOutProps> = ({ user, onSignOut }) => {
     return (
-        <div className="sign-out">
-            <span className="sign-out__user-name">{user.name}</span>
+        <div className="sign-out" data-testid="sign-out">
+            <span id="authenticated-user-name" className="sign-out__user-name">
+                {user.name}
+            </span>
             <button type="button" className="sign-out__button" onClick={onSignOut}>
                 ログアウト
             </button>

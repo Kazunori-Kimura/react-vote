@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
-import { IChoice } from '../models';
+import { IQuestionCreateParams } from '../models';
 import ChoiceList from './ChoiceList';
 import { formatLocalDatetime, clone } from '../utils';
 
 import './QuestionEntry.css';
 
 interface QuestionEntryProps {
-    onReflesh: () => void;
+    onEntry: (question: IQuestionCreateParams) => void;
 }
 
-interface IQuestionEntryState {
-    question: string;
-    limit: string;
-    choices: IChoice[];
-}
-
-const initialState: IQuestionEntryState = {
+const initialState: IQuestionCreateParams = {
     question: '',
     limit: formatLocalDatetime(new Date()),
     choices: [
@@ -24,7 +18,7 @@ const initialState: IQuestionEntryState = {
     ],
 };
 
-const QuestionEntry: React.FC<QuestionEntryProps> = ({ onReflesh }) => {
+const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
     const [question, setQuestion] = useState(initialState);
 
     /**
@@ -98,25 +92,28 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onReflesh }) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
         if (event.currentTarget.checkValidity()) {
-            // TODO: questionの登録処理
-
-            // eslint-disable-next-line no-alert
-            alert('質問を投稿しました!');
-
+            // questionの登録処理
+            const payload = clone(question);
+            payload.limit = new Date(payload.limit).toJSON();
+            onEntry(payload);
             // stateを初期化
             setQuestion(initialState);
-            // 親コンポーネントにQuestionListの更新を依頼
-            onReflesh();
         }
     };
 
     return (
-        <form className="question-entry" onSubmit={handleSubmit}>
+        <form
+            id="question-entry"
+            data-testid="question-entry"
+            className="question-entry"
+            onSubmit={handleSubmit}
+        >
             <h2 className="question-entry__title">質問を投稿する</h2>
             <textarea
                 className="question-entry__question"
+                data-testid="question-entry-question"
+                name="question"
                 placeholder="質問"
                 required
                 maxLength={255}
@@ -133,7 +130,9 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onReflesh }) => {
                 <span className="question-entry__limit-label">期限</span>
                 <input
                     className="question-entry__limit-input"
+                    data-testid="question-entry-limit"
                     type="datetime-local"
+                    name="limit"
                     required
                     min={formatLocalDatetime(new Date())}
                     value={question.limit}

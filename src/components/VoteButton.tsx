@@ -6,22 +6,18 @@ import './VoteButton.css';
 interface VoteButtonProps {
     choice: IChoice;
     disabled?: boolean;
-    onRefresh: () => void;
+    onVote: (vote: { questionId: number; choiceId: number }) => void;
 }
 
-const VoteButton: React.FC<VoteButtonProps> = ({ choice, disabled = false, onRefresh }) => {
-    /**
-     * 投票する
-     */
-    const handleVote = () => {
-        // TODO: /voteを呼び出す
-
-        // リストの更新
-        onRefresh();
-    };
-
+const VoteButton: React.FC<VoteButtonProps> = ({ choice, disabled = false, onVote }) => {
     return (
-        <button type="button" className="vote-button" disabled={disabled} onClick={handleVote}>
+        <button
+            type="button"
+            data-testid="vote-button"
+            className="vote-button"
+            disabled={disabled}
+            onClick={() => onVote({ questionId: choice.questionId ?? 0, choiceId: choice.id })}
+        >
             {choice.content}
         </button>
     );

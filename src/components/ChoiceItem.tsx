@@ -12,12 +12,13 @@ interface ChoiceItemProps {
 
 const ChoiceItem: React.FC<ChoiceItemProps> = ({ choice, index, onChange, onDelete }) => {
     return (
-        <div className="choice-item">
+        <div className="choice-item" data-testid="choice-item">
             <input
                 type="text"
+                data-testid="choice-item-input"
                 name={`${choice.id}-content`}
                 className="choice-item__content"
-                placeholder={`選択肢 ${index}`}
+                placeholder={`選択肢 ${index + 1}`}
                 required
                 maxLength={255}
                 value={choice.content}
@@ -26,6 +27,7 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ choice, index, onChange, onDele
             {index >= 2 && (
                 <button
                     type="button"
+                    data-testid="choice-item-delete-button"
                     className="choice-item__delete-button"
                     onClick={() => onDelete(choice.id)}
                 >

@@ -1,9 +1,12 @@
-export interface IQuestion {
-    id: number;
+export interface IQuestionCreateParams {
     question: string;
     limit: string;
+    choices: IChoice[];
+}
+
+export interface IQuestion extends IQuestionCreateParams {
+    id: number;
     createdBy?: number;
-    choices?: IChoice[];
     votes?: IVote[];
 }
 
@@ -20,10 +23,18 @@ export interface IVote {
     votedBy?: number;
 }
 
-export interface IUser {
-    id: number;
+export interface IUserCreateParams {
     email: string;
     name: string;
     password: string;
+}
+
+export interface IUser extends IUserCreateParams {
+    id: number;
     token?: string;
+}
+
+export interface IAuthenticateParams {
+    email: string;
+    password: string;
 }

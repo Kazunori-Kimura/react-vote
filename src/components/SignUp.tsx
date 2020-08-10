@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
+import { IUserCreateParams } from '../models';
 
 import './SignUp.css';
 
-interface ISignUpState {
-    email: string;
-    name: string;
-    password: string;
+interface SignUpProps {
+    onEntry: (user: IUserCreateParams) => void;
 }
 
-const initialState: ISignUpState = {
+const initialState: IUserCreateParams = {
     email: '',
     name: '',
     password: '',
 };
 
-const SignUp: React.FC = () => {
+const SignUp: React.FC<SignUpProps> = ({ onEntry }) => {
     const [signUpState, setSignUpState] = useState(initialState);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,18 +29,15 @@ const SignUp: React.FC = () => {
         event.preventDefault();
 
         if (event.currentTarget.checkValidity()) {
-            // TODO: ユーザー登録処理を実行する
-            // eslint-disable-next-line no-alert
-            alert(`ユーザー登録処理が完了しました。
-入力されたメールアドレスとパスワードでログインしてください。`);
-
+            // ユーザー登録処理を実行する
+            onEntry({ ...signUpState });
             // stateを初期値に戻す
             setSignUpState(initialState);
         }
     };
 
     return (
-        <form className="sign-up" onSubmit={handleSubmit}>
+        <form id="sign-up" data-testid="sign-up" className="sign-up" onSubmit={handleSubmit}>
             <h2 className="sign-up__title">ユーザー登録</h2>
             <input
                 type="email"
