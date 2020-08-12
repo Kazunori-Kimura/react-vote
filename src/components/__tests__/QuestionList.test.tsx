@@ -55,10 +55,10 @@ const questions: IQuestion[] = [
 
 describe('<QuestionList />', () => {
     it('表示', () => {
-        const onRefresh = jest.fn();
+        const onVote = jest.fn();
         const onDelete = jest.fn();
         const { getAllByTestId } = render(
-            <QuestionList questions={questions} onRefresh={onRefresh} onDelete={onDelete} />
+            <QuestionList questions={questions} onDelete={onDelete} onVote={onVote} />
         );
 
         const items = getAllByTestId('question-item');

@@ -34,15 +34,10 @@ const user: IUser = {
 
 describe('<QuestionItem />', () => {
     it('表示', () => {
-        const onRefresh = jest.fn();
+        const onVote = jest.fn();
         const onDelete = jest.fn();
         const { getByTestId } = render(
-            <QuestionItem
-                question={question}
-                user={user}
-                onRefresh={onRefresh}
-                onDelete={onDelete}
-            />
+            <QuestionItem question={question} user={user} onDelete={onDelete} onVote={onVote} />
         );
         // 質問文が表示されているか
         expect(getByTestId('question-item')).toHaveTextContent(question.question);

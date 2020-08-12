@@ -859,6 +859,13 @@ https://github.com/Kazunori-Kimura/react-vote/tree/v0.0.2
 > touch src/components/__tests__/{Header,SignIn,SignOut,QuestionEntry,ChoiceList,ChoiceItem,QuestionList,QuestionItem,VoteList,VoteButton,VoteResult,QuestionItemFooter,SignUp}.test.tsx
 ```
 
+fetch-mock - npm
+https://www.npmjs.com/package/fetch-mock
+
+```sh
+> npm install --save-dev fetch-mock node-fetch @types/fetch-mock @types/node-fetch
+```
+
 Mock Functions · Jest
 https://jestjs.io/docs/ja/mock-functions
 
