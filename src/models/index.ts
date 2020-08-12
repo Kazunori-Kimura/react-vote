@@ -23,6 +23,11 @@ export interface IVote {
     votedBy?: number;
 }
 
+export interface IVoteParams {
+    questionId: number;
+    choiceId: number;
+}
+
 export interface IUserCreateParams {
     email: string;
     name: string;
@@ -37,4 +42,8 @@ export interface IUser extends IUserCreateParams {
 export interface IAuthenticateParams {
     email: string;
     password: string;
+}
+
+export interface IRefreshPayload {
+    token: string;
 }

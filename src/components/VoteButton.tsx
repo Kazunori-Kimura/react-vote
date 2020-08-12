@@ -1,12 +1,12 @@
 import React from 'react';
-import { IChoice } from '../models';
+import { IChoice, IVoteParams } from '../models';
 
 import './VoteButton.css';
 
 interface VoteButtonProps {
     choice: IChoice;
     disabled?: boolean;
-    onVote: (vote: { questionId: number; choiceId: number }) => void;
+    onVote: (vote: IVoteParams) => void;
 }
 
 const VoteButton: React.FC<VoteButtonProps> = ({ choice, disabled = false, onVote }) => {

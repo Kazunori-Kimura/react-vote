@@ -30,7 +30,7 @@ const VoteList: React.FC<VoteListProps> = ({ limit, choices, votes, user, onVote
                     <VoteButton
                         key={key}
                         choice={choice}
-                        disabled={Number.isNaN(user?.id)}
+                        disabled={(user?.id || 0) === 0}
                         onVote={onVote}
                     />
                 );
