@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import QuestionItemFooter from '../QuestionItemFooter';
+import QuestionItemFooter from '../question/QuestionItemFooter';
 import { IQuestion } from '../../models';
 
 const question: IQuestion = {

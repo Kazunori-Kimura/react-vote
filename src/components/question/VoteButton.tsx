@@ -1,5 +1,5 @@
 import React from 'react';
-import { IChoice, IVoteParams } from '../models';
+import { IChoice, IVoteParams } from '../../models';
 
 import './VoteButton.css';
 

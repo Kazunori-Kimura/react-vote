@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import SignIn from '../SignIn';
+import SignIn from '../auth/SignIn';
 import { IAuthenticateParams } from '../../models';
 
 const user: IAuthenticateParams = {

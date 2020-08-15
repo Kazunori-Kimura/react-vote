@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUser } from '../models';
+import { IUser } from '../../models';
 
 import './SignOut.css';
 

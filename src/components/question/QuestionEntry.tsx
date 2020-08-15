@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { IQuestionCreateParams } from '../models';
+import { IQuestionCreateParams } from '../../models';
 import ChoiceList from './ChoiceList';
-import { formatLocalDatetime, clone } from '../utils';
+import { formatLocalDatetime, clone } from '../../utils';
 
 import './QuestionEntry.css';
 

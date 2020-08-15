@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import VoteList from '../VoteList';
+import VoteList from '../question/VoteList';
 import { IUser } from '../../models';
 
 // 投票済みユーザー

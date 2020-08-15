@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUser, IAuthenticateParams } from '../models';
+import { IUser, IAuthenticateParams } from '../../models';
 import SignOut from './SignOut';
 import SignIn from './SignIn';
 

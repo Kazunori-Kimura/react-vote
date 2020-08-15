@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import VoteResult from '../VoteResult';
+import VoteResult from '../question/VoteResult';
 import { IChoice, IVote, IUser } from '../../models';
 
 const choice: IChoice = { id: 2, questionId: 1, content: 'たけのこ' };

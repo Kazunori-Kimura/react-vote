@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import QuestionItem from '../QuestionItem';
+import QuestionItem from '../question/QuestionItem';
 import { IQuestion, IUser } from '../../models';
 
 const question: IQuestion = {

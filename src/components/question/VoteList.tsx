@@ -1,5 +1,5 @@
 import React from 'react';
-import { IChoice, IVote, IUser } from '../models';
+import { IChoice, IVote, IUser } from '../../models';
 import VoteResult from './VoteResult';
 import VoteButton from './VoteButton';
 

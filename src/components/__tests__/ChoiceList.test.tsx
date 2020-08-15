@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import ChoiceList from '../ChoiceList';
+import ChoiceList from '../question/ChoiceList';
 import { IChoice } from '../../models';
 
 const choices: IChoice[] = [

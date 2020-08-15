@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import SignUp from '../SignUp';
+import SignUp from '../auth/SignUp';
 import { IUserCreateParams } from '../../models';
 
 const user: IUserCreateParams = {

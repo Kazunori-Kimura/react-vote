@@ -1,5 +1,5 @@
 import React from 'react';
-import { IChoice } from '../models';
+import { IChoice } from '../../models';
 import ChoiceItem from './ChoiceItem';
 
 import './ChoiceList.css';

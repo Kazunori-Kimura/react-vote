@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
-import Header from './components/Header';
-import QuestionEntry from './components/QuestionEntry';
-import SignUp from './components/SignUp';
-import QuestionList from './components/QuestionList';
+import Header from './components/auth/Header';
+import QuestionEntry from './components/question/QuestionEntry';
+import SignUp from './components/auth/SignUp';
+import QuestionList from './components/question/QuestionList';
 import {
     IUser,
     IQuestionCreateParams,

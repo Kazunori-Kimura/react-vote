@@ -1,6 +1,6 @@
 import React from 'react';
-import { formatLocalDatetime } from '../utils';
-import { IQuestion } from '../models';
+import { formatLocalDatetime } from '../../utils';
+import { IQuestion } from '../../models';
 
 import './QuestionItemFooter.css';
 

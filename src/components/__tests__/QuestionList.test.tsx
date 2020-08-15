@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import QuestionList from '../QuestionList';
+import QuestionList from '../question/QuestionList';
 import { IQuestion } from '../../models';
 
 const questions: IQuestion[] = [

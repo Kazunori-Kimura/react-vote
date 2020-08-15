@@ -1,5 +1,5 @@
 import React from 'react';
-import { IQuestion, IUser } from '../models';
+import { IQuestion, IUser } from '../../models';
 import VoteList from './VoteList';
 import QuestionItemFooter from './QuestionItemFooter';
 

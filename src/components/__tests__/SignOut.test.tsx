@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import SignOut from '../SignOut';
+import SignOut from '../auth/SignOut';
 import { IUser } from '../../models';
 
 const user: IUser = {

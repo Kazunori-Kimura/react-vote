@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IUserCreateParams } from '../models';
+import { IUserCreateParams } from '../../models';
 
 import './SignUp.css';
 

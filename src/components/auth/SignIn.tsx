@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IAuthenticateParams } from '../models';
+import { IAuthenticateParams } from '../../models';
 
 import './SignIn.css';
 
