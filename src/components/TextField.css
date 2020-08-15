@@ -1,0 +1,19 @@
+.text-field__input {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.text-field__input:focus {
+    border: 1px solid #3498DB;
+	outline: none;
+	box-shadow: 0 0 2px 2px rgba(31,97,141, .5);
+}

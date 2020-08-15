@@ -1,5 +1,7 @@
 import React from 'react';
 import { IChoice } from '../../models';
+import TextField from '../TextField';
+import DeleteButton from '../DeleteButton';
 
 import './ChoiceItem.css';
 
@@ -13,7 +15,7 @@ interface ChoiceItemProps {
 const ChoiceItem: React.FC<ChoiceItemProps> = ({ choice, index, onChange, onDelete }) => {
     return (
         <div className="choice-item" data-testid="choice-item">
-            <input
+            <TextField
                 type="text"
                 data-testid="choice-item-input"
                 name={`${choice.id}-content`}
@@ -25,14 +27,13 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ choice, index, onChange, onDele
                 onChange={onChange}
             />
             {index >= 2 && (
-                <button
-                    type="button"
+                <DeleteButton
                     data-testid="choice-item-delete-button"
                     className="choice-item__delete-button"
                     onClick={() => onDelete(choice.id)}
                 >
                     削除
-                </button>
+                </DeleteButton>
             )}
         </div>
     );

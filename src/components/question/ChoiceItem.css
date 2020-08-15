@@ -6,16 +6,9 @@
 
 .choice-item__content {
     flex: 1;
-    padding: 0.25rem;
 }
 
 .choice-item__delete-button {
     width: 3rem;
-    font-size: 0.8rem;
-    border-radius: 3px;
-    border: none;
-    background-color: #ff8a84;
-    padding: 0.25rem;
     margin-left: 0.5rem;
-    cursor: pointer;
 }

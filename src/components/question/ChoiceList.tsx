@@ -1,6 +1,7 @@
 import React from 'react';
 import { IChoice } from '../../models';
 import ChoiceItem from './ChoiceItem';
+import Button from '../Button';
 
 import './ChoiceList.css';
 
@@ -23,14 +24,13 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ choices, onChange, onDelete, on
                     onDelete={onDelete}
                 />
             ))}
-            <button
-                type="button"
+            <Button
                 data-testid="choice-item-add-button"
                 className="choice-list__add-button"
                 onClick={onAdd}
             >
                 追加
-            </button>
+            </Button>
         </div>
     );
 };

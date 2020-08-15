@@ -1,5 +1,6 @@
 import React from 'react';
 import { IUser } from '../../models';
+import DeleteButton from '../DeleteButton';
 
 import './SignOut.css';
 
@@ -14,9 +15,9 @@ const SignOut: React.FC<SignOutProps> = ({ user, onSignOut }) => {
             <span id="authenticated-user-name" className="sign-out__user-name">
                 {user.name}
             </span>
-            <button type="button" className="sign-out__button" onClick={onSignOut}>
+            <DeleteButton className="sign-out__button" onClick={onSignOut}>
                 ログアウト
-            </button>
+            </DeleteButton>
         </div>
     );
 };
