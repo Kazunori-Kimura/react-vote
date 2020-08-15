@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { IUser, IVote, IChoice } from '../models';
+import { IUser, IVote, IChoice } from '../../models';
 
 import './VoteResult.css';
 

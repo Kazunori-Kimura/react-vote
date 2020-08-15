@@ -1,0 +1,46 @@
+.delete-button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.3rem 0.5rem;
+    background-color: #ff8a84;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.entry-button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.3rem 0.5rem;
+    background-color: #92d36e;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.normal-button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

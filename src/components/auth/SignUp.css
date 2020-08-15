@@ -16,23 +16,16 @@
 
 .sign-up__email {
     margin-bottom: 9px;
-    padding: 0.25rem;
 }
 
 .sign-up__name {
     margin-bottom: 9px;
-    padding: 0.25rem;
 }
 
 .sign-up__password {
     margin-bottom: 18px;
-    padding: 0.25rem;
 }
 
 .sign-up__entry-button {
-    background-color: #92d36e;
-    padding: 0.25rem;
-    border-radius: 3px;
-    border: none;
-    cursor: pointer;
+    height: 2.5rem;
 }

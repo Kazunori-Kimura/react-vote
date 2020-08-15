@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { IAuthenticateParams } from '../models';
+import { IAuthenticateParams } from '../../models';
+import TextField from '../TextField';
+import EntryButton from '../EntryButton';
 
 import './SignIn.css';
 
@@ -52,7 +54,7 @@ const SignIn: React.FC<SignInProps> = ({ onSignIn }) => {
             onSubmit={handleSubmit}
             autoComplete="off"
         >
-            <input
+            <TextField
                 type="email"
                 name="email"
                 className="sign-in__email"
@@ -61,7 +63,7 @@ const SignIn: React.FC<SignInProps> = ({ onSignIn }) => {
                 value={signInState.email}
                 onChange={handleChange}
             />
-            <input
+            <TextField
                 type="password"
                 name="password"
                 className="sign-in__password"
@@ -70,9 +72,9 @@ const SignIn: React.FC<SignInProps> = ({ onSignIn }) => {
                 value={signInState.password}
                 onChange={handleChange}
             />
-            <button type="submit" className="sign-in__button">
+            <EntryButton type="submit" className="sign-in__button">
                 ログイン
-            </button>
+            </EntryButton>
         </form>
     );
 };

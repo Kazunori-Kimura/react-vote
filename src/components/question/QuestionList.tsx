@@ -1,5 +1,5 @@
 import React from 'react';
-import { IQuestion, IUser } from '../models';
+import { IQuestion, IUser } from '../../models';
 import QuestionItem from './QuestionItem';
 
 import './QuestionList.css';

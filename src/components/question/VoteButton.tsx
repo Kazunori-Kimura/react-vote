@@ -1,5 +1,6 @@
 import React from 'react';
-import { IChoice, IVoteParams } from '../models';
+import { IChoice, IVoteParams } from '../../models';
+import Button from '../Button';
 
 import './VoteButton.css';
 
@@ -11,15 +12,14 @@ interface VoteButtonProps {
 
 const VoteButton: React.FC<VoteButtonProps> = ({ choice, disabled = false, onVote }) => {
     return (
-        <button
-            type="button"
+        <Button
             data-testid="vote-button"
             className="vote-button"
             disabled={disabled}
             onClick={() => onVote({ questionId: choice.questionId ?? 0, choiceId: choice.id })}
         >
             {choice.content}
-        </button>
+        </Button>
     );
 };
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { IUserCreateParams } from '../models';
+import { IUserCreateParams } from '../../models';
+import TextField from '../TextField';
+import EntryButton from '../EntryButton';
 
 import './SignUp.css';
 
@@ -39,7 +41,7 @@ const SignUp: React.FC<SignUpProps> = ({ onEntry }) => {
     return (
         <form id="sign-up" data-testid="sign-up" className="sign-up" onSubmit={handleSubmit}>
             <h2 className="sign-up__title">ユーザー登録</h2>
-            <input
+            <TextField
                 type="email"
                 name="email"
                 className="sign-up__email"
@@ -49,7 +51,7 @@ const SignUp: React.FC<SignUpProps> = ({ onEntry }) => {
                 value={signUpState.email}
                 onChange={handleChange}
             />
-            <input
+            <TextField
                 type="text"
                 name="name"
                 className="sign-up__name"
@@ -59,7 +61,7 @@ const SignUp: React.FC<SignUpProps> = ({ onEntry }) => {
                 value={signUpState.name}
                 onChange={handleChange}
             />
-            <input
+            <TextField
                 type="password"
                 name="password"
                 className="sign-up__password"
@@ -68,9 +70,9 @@ const SignUp: React.FC<SignUpProps> = ({ onEntry }) => {
                 value={signUpState.password}
                 onChange={handleChange}
             />
-            <button type="submit" className="sign-up__entry-button">
+            <EntryButton type="submit" className="sign-up__entry-button">
                 登録
-            </button>
+            </EntryButton>
         </form>
     );
 };

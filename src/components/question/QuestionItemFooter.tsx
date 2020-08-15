@@ -1,6 +1,7 @@
 import React from 'react';
-import { formatLocalDatetime } from '../utils';
-import { IQuestion } from '../models';
+import { formatLocalDatetime } from '../../utils';
+import { IQuestion } from '../../models';
+import DeleteButton from '../DeleteButton';
 
 import './QuestionItemFooter.css';
 
@@ -24,13 +25,13 @@ const QuestionItemFooter: React.FC<QuestionItemFooterProps> = ({
             </div>
             <div className="question-item-footer__vote-count">{`${voteCount} 票`}</div>
             {isOwner && (
-                <button
+                <DeleteButton
                     type="button"
                     className="question-item-footer__delete-button"
                     onClick={() => onDelete(question.id)}
                 >
                     削除
-                </button>
+                </DeleteButton>
             )}
         </div>
     );

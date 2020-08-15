@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import QuestionEntry from '../QuestionEntry';
+import QuestionEntry from '../question/QuestionEntry';
 import { IQuestionCreateParams } from '../../models';
 import { formatLocalDatetime } from '../../utils';
 

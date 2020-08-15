@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { IQuestionCreateParams } from '../models';
+import { IQuestionCreateParams } from '../../models';
 import ChoiceList from './ChoiceList';
-import { formatLocalDatetime, clone } from '../utils';
+import { formatLocalDatetime, clone } from '../../utils';
+import EntryButton from '../EntryButton';
+import TextField from '../TextField';
+import MultiLineField from '../MultiLineField';
 
 import './QuestionEntry.css';
 
@@ -110,7 +113,7 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
             onSubmit={handleSubmit}
         >
             <h2 className="question-entry__title">質問を投稿する</h2>
-            <textarea
+            <MultiLineField
                 className="question-entry__question"
                 data-testid="question-entry-question"
                 name="question"
@@ -126,9 +129,12 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
                 onDelete={handleDeleteChoice}
                 onAdd={handleAddChoice}
             />
-            <label className="question-entry__limit">
-                <span className="question-entry__limit-label">期限</span>
-                <input
+            <div className="question-entry__limit">
+                <label className="question-entry__limit-label" htmlFor="question-entry-limit">
+                    期限
+                </label>
+                <TextField
+                    id="question-entry-limit"
                     className="question-entry__limit-input"
                     data-testid="question-entry-limit"
                     type="datetime-local"
@@ -138,10 +144,10 @@ const QuestionEntry: React.FC<QuestionEntryProps> = ({ onEntry }) => {
                     value={question.limit}
                     onChange={handleChangeLimit}
                 />
-            </label>
-            <button type="submit" className="question-entry__entry">
+            </div>
+            <EntryButton type="submit" className="question-entry__entry">
                 登録
-            </button>
+            </EntryButton>
         </form>
     );
 };
